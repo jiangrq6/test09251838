@@ -31,14 +31,14 @@ public class UserController {
 
     @RequestMapping(value = "/verify",method = RequestMethod.POST)
     @ResponseBody
-    public ResultVO verify(@RequestParam String login,
-                           @RequestParam String vCode){
-        return userService.verify(login,vCode);
+    public ResultVO verify(@RequestParam String login){
+        return userService.verify(login);
     }
 
     @RequestMapping(value = "/changePassword",method = RequestMethod.POST)
     @ResponseBody
-    public ResultVO changePassword(){
-        return null;
+    public ResultVO changePassword(@RequestParam String login,
+                                   @RequestParam String password){
+        return userService.changePassword(login,password);
     }
 }

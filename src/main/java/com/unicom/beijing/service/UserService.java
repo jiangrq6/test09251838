@@ -7,7 +7,7 @@ public interface UserService {
 
     ResultVO login(String login,String password);
     ResultVO register(JSONObject jsonObject);
-    ResultVO verify(String login,String vCode);
+    ResultVO verify(String login);
     ResultVO changePassword(String login,String password);
 
 }

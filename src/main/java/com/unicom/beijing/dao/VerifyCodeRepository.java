@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface VerifyCodeRepository extends JpaRepository<VerifyCode,Long> {
 
-    @Query(nativeQuery = true,value = "SELECT * from verify_code where phone = ?1 and state = 'pending'")
+    @Query(nativeQuery = true,value = "SELECT * from verify_code where login = ?1 and state = 'pending'")
     VerifyCode getAllByLogin(String login);
 }

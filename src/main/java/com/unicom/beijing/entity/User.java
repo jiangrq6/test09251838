@@ -3,6 +3,7 @@ package com.unicom.beijing.entity;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "unicom_user")
@@ -15,6 +16,9 @@ public class User {
 
     @Column(name = "name")
     private String name;
+
+    @Column(name = "login")
+    private String login;
 
     @Column(name = "password")
     private String password;
@@ -40,12 +44,21 @@ public class User {
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "createTime")
-    private String createTime;
+    private Date createTime;
 
 //    @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "updateTime")
-    private String updateTime;
+    private Date updateTime;
+
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
 
     public Long getId() {
         return id;
@@ -119,19 +132,22 @@ public class User {
         this.gender = gender;
     }
 
-    public String getCreateTime() {
+    public Date getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(String createTime) {
+    public void setCreateTime(Date createTime) {
         this.createTime = createTime;
     }
 
-    public String getUpdateTime() {
+    public Date getUpdateTime() {
         return updateTime;
     }
 
-    public void setUpdateTime(String updateTime) {
+    public void setUpdateTime(Date updateTime) {
         this.updateTime = updateTime;
     }
+
+    
+
 }
